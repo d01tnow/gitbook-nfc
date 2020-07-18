@@ -1,11 +1,11 @@
 以下 NFC Data Exchange Format(NDEF) Technical Specification.pdf 简称为 NDEF-SPEC.
 NDEF规范定义了用来在 NFC 设备间或 NFC 设备与 NFC 标签间交换信息的消息封装格式.  NDEF 是轻量级的二进制的消息格式.
 NDEF 消息的结构图(截取自 NDEF-SPEC 2.3)
-![[ndef-message.png]]
+![ndef-message.png](./images/ndef-message.png)
 一条记录的结构布局(截取自 NDEF-SPEC 3.2)
-![[record-layout.png]]
+![record-layout.png](./images/record-layout.png)
 
-<img src="/Users/wangzhijun/me/gitbook/nfc/nfc-spec/record-layout.png" alt="image-20200712132255088" style="zoom:50%;" />
+
 
 * 记录布局说明
 
