@@ -4,6 +4,9 @@
 * NFC-A:
 * IRI: Internationalized Resource Identifier . 国际化资源标识符.
 * SE: Secure Element. 安全元件.
+* eSE: 嵌入式的安全元件.
+* UICC: Universal Integrated Circuit Card. 通用集成电路. 指的是在移动电话中的智能卡.
+* SIM: Subscribe Identity Module. 用于存储用户身份识别数据, 短信, 电话号码的智能卡. 是 UICC 的一种.
 
 ## NCI 
 
@@ -16,6 +19,32 @@
 * T4T: NFC Forum Type 4 Tag Technical Specification. 第4类标签.  ISO14443-4 A/B . 2KB~144KB, 106kpbs~424kbps.
 * T5T: NFC Forum Type 5 Tag Technical Specification. 第5类标签. ISO15693. 32~256 B. 212/424kbps
 * NFA: Nfc For Android. NfA是一组用于android平台的nfc助手。主要目的是便于在android平台上和nfc设备通信。
+
+## 金融卡IC卡规范
+
+* DDF: 目录定义文件. PBOC3 [IC卡规范第4部分](http://www.docin.com/p-50918524.html)中6.2.1.5规定, 终端支持两种放式建立候选应用列表:  先用目录选择方式, 失败后使用 AID 列表选择方式. 目录选择方式下, 终端从卡片读取一个文件, 该文件中记录了卡片支持的应用的列表, 终端将卡片的应用列表和自己支持的应用列表取交集, 建立共同支持的应用的候选列表. 而 AID 列表对于卡和终端都是必备的. 终端会遍历自己支持的每个应用, 向卡片发送 SELECT 命令, 如果卡片也支持该应用, 则终端将该应用加入到共同支持的应用的候选列表. 终端会按优先级依次选择应用.
+* PSE: Payment System Environment . 接触卡, DDF 为: "1PAY.SYS.DDF01".
+* PPSE: Proximity Payment System Environment . 近场支付系统环境. 对于非接触卡选择的支付系统环境的 DDF: "2PAY.SYS.DDF01"
+
+## 7816-5
+
+* AID: 即唯一标识一个应用，分为两部分，RID(5字节)+PIX（最多11字节）
+
+* RID: 注册标识符, 由ISO组织来分配, 标识一个全球唯一的应用提供商, 一般是分配给卡组织. 比如分配给银联,RID=0xA000000333 
+
+* PIX: 扩展应用标识符, 一般是由应用提供商自己定义. 比如: 银联定义的
+
+> PBOC规范，常见的AID为(十六进制)：
+>
+> A0 00 00 03 33  01 01 01    PBOC借记应用
+>
+> A0 00 00 03 33  01 01 02    PBOC贷记应用
+>
+> A0 00 00 03 33  01 01 03    PBOC准贷记应用
+>
+> A0 00 00 03 33  01 01 06    PBOC纯电子现金应用
+
+  
 
 ## 卡模拟
 
